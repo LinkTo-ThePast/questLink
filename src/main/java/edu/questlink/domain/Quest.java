@@ -1,22 +1,27 @@
 package edu.questlink.domain;
 
 
-public class Quest {
+import edu.questlink.domain.enums.QuestType;
 
-    // defining an enum for mission type>
-    private static enum MissionType {
-        STORY,
-        COMBAT,
-        PUZZLE,
-        BOSS,
-    }
+public class Quest {
 
     // attributes that define a mission in our game:
     private String id;
     private String title;
-    private MissionType type;
+    private QuestType type;
     private int damage;
     private int xpReward;
     private boolean completed;
+
+    // provide a way to initialize a quest
+    public Quest(String id, String title, QuestType type, int damage, int xpReward, boolean completed) {
+        this.id =  id;
+        this.title = title;
+        this.type = type;
+        this.damage =  damage;
+        this.xpReward = xpReward;
+        this.completed = completed;
+    }
+
 
 }
